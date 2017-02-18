@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "lite-server && gulp watch",
+    "server": "lite-server && gulp watch",
     "restore": "npm install && jspm install",
-    "build": "gulp set:environment --prod && gulp build && gulp bundle"
+    "build": "gulp set:environment --prod && gulp build && gulp unbundle && gulp bundle",
+    "build-dev": "gulp set:environment && gulp build && gulp unbundle"
   },
   "author": "",
   "license": "ISC",

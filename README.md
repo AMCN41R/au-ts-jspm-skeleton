@@ -2,7 +2,7 @@
 An Aurelia skeleton project using Typescript and JSPM, with Karma, Mocha and Chai for testing.
 
 ## Prerequesites
-Ensure you hae [node]() installed.
+Ensure you have [node](https://nodejs.org/en/download/) installed.
 
 ## Restore Dependencies
 ```

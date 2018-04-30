@@ -1,13 +1,23 @@
-import {inject, autoinject} from "aurelia-framework";
-import {Calc} from "./utilities/calc";
+import { inject, autoinject } from "aurelia-framework";
+import { Router, RouterConfiguration } from "aurelia-router";
+import { Calc } from "./utilities/calc";
 
 @autoinject
-// @inject(Calc)
 export class App {
-    constructor(private calc: Calc){
+    constructor(private calc: Calc) {
     }
 
-    message: string;
+    private message: string;
+    private router: Router;
+
+    configureRouter(config: RouterConfiguration, router: Router){
+        this.router = router;
+
+        config.map([
+            {route: "", name: "home", moduleId: "pages/home"},
+            {route: "/about", name: "about", moduleId: "pages/about"}
+        ]);
+    }
 
     add(a: number, b: number) {
         return this.calc.add(a, b);
